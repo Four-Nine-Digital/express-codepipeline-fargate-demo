@@ -40,6 +40,8 @@ You will need to:
 ## Step 4: Deploy the code
 Deploy the code with the command `cdk deploy`
 
+Do not worry about the Deploy stage passing. Even if it fails, just make sure the build stage Succeed.
+
 ## Step 5: Comment out the image and PORT
 - Got to `cdk/lib/cdk-stack.js` 
 - Uncomment out `image: ecs.ContainerImage.fromEcrRepository(ecrRepository),`
