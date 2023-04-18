@@ -20,5 +20,5 @@ new ExpressFargateDemo(app, 'ExpressFargateDemo', {
   env: {
     region: config.AWS_REGION,
   },
-  environmentVariables: config
+  envVariables: config
 });

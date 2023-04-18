@@ -1,5 +1,13 @@
-const { Stack, Duration } = require('aws-cdk-lib');
-// const sqs = require('aws-cdk-lib/aws-sqs');
+const { Stack, Duration, RemovalPolicy } = require('aws-cdk-lib');
+const ec2 = require('aws-cdk-lib/aws-ec2');
+const iam = require('aws-cdk-lib/aws-iam');
+const ecs = require('aws-cdk-lib/aws-ecs');
+const ecr = require('aws-cdk-lib/aws-ecr');
+const logs = require('aws-cdk-lib/aws-logs')
+const codepipeline = require('aws-cdk-lib/aws-codepipeline');
+const codepipeline_actions = require('aws-cdk-lib/aws-codepipeline-actions');
+const codebuild = require('aws-cdk-lib/aws-codebuild');
+const ecsPatterns = require('aws-cdk-lib/aws-ecs-patterns');
 
 class ExpressFargateDemo extends Stack {
   /**
@@ -30,7 +38,6 @@ class ExpressFargateDemo extends Stack {
     )
 
     const containerName = 'application-frontend'
-
 
     const logGroup = new logs.LogGroup(this, `${this.stackName}-TaskLogGroup`, {
       logGroupName: '/express-fargate-demo/tasks',
