@@ -16,7 +16,7 @@ const config = {
   },
 }
 const app = new cdk.App();
-new CdkStack(app, 'ExpressFargateDemo', {
+new ExpressFargateDemo(app, 'ExpressFargateDemo', {
   env: {
     region: config.AWS_REGION,
   },
