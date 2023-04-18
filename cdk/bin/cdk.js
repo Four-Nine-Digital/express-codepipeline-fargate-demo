@@ -5,10 +5,10 @@ const { ExpressFargateDemo } = require('../lib/cdk-stack');
 
 const config = {
   FRONTEND_PORT: 3000,
-  AWS_REGION: 'eu-central-1', //region where your applicaiton is deployed
+  AWS_REGION: 'eu-west-1', //region where your applicaiton is deployed
   GITHUB_REPO_CONFIG: {
     owner: 'Four-Nine-Digital',
-    repo: 'express-fargate-demo',
+    repo: 'express-codepipeline-fargate-demo',
     branch: 'main',
     oauthToken: cdk.SecretValue.secretsManager('prashant/github/token', { //secret name
       jsonField: 'prashant-github-token', // value you entered for the key
